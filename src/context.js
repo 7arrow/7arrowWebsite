@@ -18,7 +18,7 @@ const AppProvider = ({ children }) => {
       type: "HOME_UPDATE",
       payload: {
         name: "7Arrow.in",
-        image: "./images/banner1.jpg",
+        image: "./images/tech1.png",
       },
     });
   };
@@ -28,7 +28,7 @@ const AppProvider = ({ children }) => {
       type: "ABOUT_UPDATE",
       payload: {
         name: "7Arrow.in",
-        image: "./images/portfilo.jpg",
+        image: "./images/android-app-design.png",
       },
     });
   };

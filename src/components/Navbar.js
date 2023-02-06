@@ -84,6 +84,7 @@ const Navbar = () => {
             &:link,
             &:visited {
               font-size: 4.2rem;
+              color: ${({ theme }) => theme.colors.helper};
             }
 
             &:hover,
@@ -177,8 +178,9 @@ const Navbar = () => {
           <CgMenu
             name="menu-outline"
             className="mobile-nav-icon"
+            style={{color: '#fff'}}
             onClick={() => setOpenMenu(true)}
-          />
+          /> 
           <CgCloseR
             name="close-outline"
             className="close-outline mobile-nav-icon"

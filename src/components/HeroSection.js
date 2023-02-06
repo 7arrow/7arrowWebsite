@@ -2,15 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 import { useGlobalContext } from "../context";
+import PageTitle from "./PageTitle";
 
 const HeroSection = () => {
   const { name, image } = useGlobalContext();
 
   return (
+    <div>
+      <PageTitle title="Who We Are" />
     <Wrapper>
       <div className="container grid grid-two-column">
         <div className="section-hero-data">
-          <h3 className="hero-top-data">Who We Are</h3>
+          {/* <h3 className="hero-top-data">Who We Are</h3> */}
           <h3 className="hero-heading">{name}</h3>
           <p className="hero-para">
             We are the team of talanted developers, computer engineers,
@@ -20,7 +23,7 @@ const HeroSection = () => {
             solutons that increase user engagement.
           </p>
           {/* <div className="visible-xs visible-sm"> */}
-            <hr />
+          <hr />
           {/* </div> */}
           <h3 className="hero-top-data">What We Do</h3>
           <p>
@@ -55,11 +58,12 @@ const HeroSection = () => {
         </div>
       </div>
     </Wrapper>
+    </div>
   );
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  padding: 5rem 0;
 
   .section-hero-data {
     display: flex;
@@ -101,7 +105,8 @@ const Wrapper = styled.section`
   }
 
   .hero-img {
-    max-width: 80%;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

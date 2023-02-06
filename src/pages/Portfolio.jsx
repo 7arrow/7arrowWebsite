@@ -1,96 +1,110 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import ImageCarousel from "../components/ImageCarousel";
+// import ImageCarousel from "../components/ImageCarousel";
+import PageTitle from "../components/PageTitle";
 
-// import Modal from "react-bootstarp/Modal";
-// import { Modal, Button } from "bootstrap";
-import { Modal } from "react-bootstrap";
+// import { Modal } from "react-bootstrap";
+import Lightbox from "yet-another-react-lightbox";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 const Portfolio = () => {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState([]);
+  const [fullScreen, setFullScreen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
 
-  // function openModal() {
-  //   setShowModal(!showModal);
-  // }
-  function MyVerticallyCenteredModal(props) {
-    console.log("Selected Project : ", props.data);
-    return (
-      <Modal
-        {...props}
-        size="xl"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        // backdrop = "static"
-        fullscreen="true"
-        // aria-labelledby="example-custom-modal-styling-title"
-        contentClassName="modalContainer"
-      >
-        <Modal.Header style={{justifyContent: "center"}}>
-          <Modal.Title id="contained-modal-title-vcenter">
-            {props.data.name}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          {/* <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p> */}
-          <ImageCarousel data={props.data} />
-        </Modal.Body>
-        {/* <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer> */}
-      </Modal>
-    );
-  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (width <= 768) {
+      setFullScreen(true);
+    } else {
+      setFullScreen(false);
+    }
+  }, [width]);
 
   return (
-    <Wrapper className="section">
-      <h2 className="common-heading">Our Completed Projects</h2>
-      <div className="container grid grid-three-column">
-        {projects.map((currElem) => {
-          const { id, name } = currElem;
-          const images = currElem.images;
-          return (
-            <div
-              className="card"
-              key={id}
-              onClick={() => {
-                setShowModal(true);
-                setSelectedProject(currElem);
-              }}
-            >
-              <figure>
-                <img src={images[0].src} alt={name} />
-              </figure>
-              <div className="card-data">
-                <h3>{name}</h3>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      {/* <ImageCarousel toggle={showModal} action={openModal} /> */}
+    <div>
+      <PageTitle title="Our Completed Projects" />
+      <Wrapper className="section">
+        {/* <h2 className="common-heading">Our Completed Projects</h2> */}
+        <div className="container grid grid-three-column">
+          {projects.map((currElem) => {
+            const { id, name } = currElem;
+            const images = currElem.images;
+            return (
+              <div
+                className="card"
+                key={id}
+                onClick={() => {
+                  // setShowModal(true);
+                  setSelectedProject(currElem.images);
+                  setOpen(true);
+                }}
+              >
+                <figure className="images">
+                  <img src={images[0].src} alt={name} className="photo" />
+                  <img src={images[1].src} alt={name} className="photo" />
+                  {images[2] ? <img src={images[0].src} alt={name} className="photo" />: null}
+                </figure>
+                {/* <div class="images">
+                  <div class="photo">
+                    <img src={images[0].src} alt="photo" />
+                  </div>
 
-      <MyVerticallyCenteredModal
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        data={selectedProject}
-      />
-    </Wrapper>
+                  <div class="photo">
+                    <img src={images[1].src} alt="photo" />
+                  </div>
+                  {images[2] ? 
+                  <div class="photo">
+                    <img src={images[2].src} alt="photo" />
+                  </div> : null }
+                </div> */}
+                <div className="card-data">
+                  <h3>{name}</h3>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <Lightbox
+          open={open}
+          close={() => setOpen(false)}
+          slideshow={{ autoplay: true, delay: 4000 }}
+          fullscreen={fullScreen}
+          plugins={[Thumbnails, Slideshow, Fullscreen]}
+          // slides={[
+          //   { src: selectedProject[0].src },
+          //   { src: selectedProject[1].src },
+          //   { src: selectedProject[2].src },
+          // ]}
+          slides={selectedProject.map((image, id) => {
+            return {
+              src: image.src,
+            };
+          })}
+        />
+      </Wrapper>
+    </div>
   );
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  padding: 5rem 0;
   background-color: ${({ theme }) => theme.colors.bg};
 
   .container {
@@ -145,16 +159,161 @@ const Wrapper = styled.section`
     }
   }
 
-  .modal {
-    background-color: black;
-  }
+  .images {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 10px;
+            padding: 10px;
+        }
+  
+        .photo {
+            max-width: 30%;
+            padding: 0 10px;
+            height: 150px;
+        }
+  
+        .photo img {
+            width: 100%;
+            height: 100%;
+        }
 
-  /*  */
+  /* @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .modal {
+      margin: auto;
+    }
+    .modal-dialog {
+      position: absolute;
+      height: 50%;
+      width: 50%;
+    }
+    .modal-md {
+      margin: auto;
+    }
+    .modal-dialog-centered {
+      display: flex;
+      margin: auto;
+      align-items: center;
+    }
+  } */
 `;
 
 const projects = [
   {
     id: 1,
+    name: "Mumtreprenuer App",
+    images: [
+      {
+        id: 1,
+        src: "./images/PortfolioImages/Mumtreprenuer App/Mumtrepreneurs_login.jpg",
+      },
+      {
+        id: 2,
+        src: "./images/PortfolioImages/Mumtreprenuer App/Mumtrepreneurs_dashboard.jpg",
+      },
+      {
+        id: 3,
+        src: "./images/PortfolioImages/Mumtreprenuer App/Mumtrepreneurs_more.jpg",
+      },
+      {
+        id: 4,
+        src: "./images/PortfolioImages/Mumtreprenuer App/Mumtrepreneurs_profile.jpg",
+      },
+      {
+        id: 5,
+        src: "./images/PortfolioImages/Mumtreprenuer App/Mumtrepreneurs_resources.jpg",
+      },
+      {
+        id: 6,
+        src: "./images/PortfolioImages/Mumtreprenuer App/Mumtrepreneurs_features.jpg",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Dairy Service App",
+    images: [
+      {
+        id: 1,
+        src: "./images/PortfolioImages/Dairy Service App/DairyService_dashboard.jpg",
+      },
+      {
+        id: 2,
+        src: "./images/PortfolioImages/Dairy Service App/DairyServiceApp_login.jpg",
+      },
+      {
+        id: 3,
+        src: "./images/PortfolioImages/Dairy Service App/DairyServiceApp_signup.jpg",
+      },
+      {
+        id: 4,
+        src: "./images/PortfolioImages/Dairy Service App/DairyServiceApp_drawer.jpg",
+      },
+      {
+        id: 5,
+        src: "./images/PortfolioImages/Dairy Service App/DairyService_serviceDetails.jpg",
+      },
+      {
+        id: 6,
+        src: "./images/PortfolioImages/Dairy Service App/DairyServiceApp_newInstallation.jpg",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Social App",
+    images: [
+      {
+        id: 1,
+        src: "./images/PortfolioImages/Social App/SocialApp_login.jpg",
+      },
+      {
+        id: 2,
+        src: "./images/PortfolioImages/Social App/SocialApp_signup.jpg",
+      },
+      {
+        id: 3,
+        src: "./images/PortfolioImages/Social App/SocialApp_dashboard.jpg",
+      },
+      {
+        id: 4,
+        src: "./images/PortfolioImages/Social App/SocialApp_profile.jpg",
+      },
+      {
+        id: 5,
+        src: "./images/PortfolioImages/Social App/SocialApp_editProfile.jpg",
+      },
+      {
+        id: 6,
+        src: "./images/PortfolioImages/Social App/SocialApp_uploadPhoto.jpg",
+      },
+      {
+        id: 7,
+        src: "./images/PortfolioImages/Social App/SocialApp_messages.jpg",
+      },
+      {
+        id: 8,
+        src: "./images/PortfolioImages/Social App/SocialApp_addPost.jpg",
+      },
+      {
+        id: 9,
+        src: "./images/PortfolioImages/Social App/SocialApp_dashboardDark.jpg",
+      },
+      {
+        id: 10,
+        src: "./images/PortfolioImages/Social App/SocialApp_profileDark.jpg",
+      },
+      {
+        id: 11,
+        src: "./images/PortfolioImages/Social App/SocialApp_editProfileDark.jpg",
+      },
+      {
+        id: 12,
+        src: "./images/PortfolioImages/Social App/SocialApp_messagesDark.jpg",
+      },
+    ],
+  },
+  {
+    id: 4,
     name: "Casetrack",
     images: [
       {
@@ -184,7 +343,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     name: "Hotel App",
     images: [
       {
@@ -206,7 +365,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 6,
     name: "HairStyleWale App",
     images: [
       {
@@ -224,7 +383,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     name: "GPS Login",
     images: [
       {
@@ -238,7 +397,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     name: "Bluetooth Printer",
     images: [
       {
@@ -256,7 +415,7 @@ const projects = [
     ],
   },
   {
-    id: 6,
+    id: 9,
     name: "Fingerprint Demo App",
     images: [
       {
@@ -274,7 +433,7 @@ const projects = [
     ],
   },
   {
-    id: 7,
+    id: 10,
     name: "Info Storage App",
     images: [
       {
@@ -294,3 +453,44 @@ const projects = [
 ];
 
 export default Portfolio;
+
+  /* <ImageCarousel toggle={showModal} action={openModal} /> */
+  /* <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        > */
+
+  /* <MyVerticallyCenteredModal
+            show={showModal}
+            onHide={() => setShowModal(false)}
+            data={selectedProject}
+            className="modal"
+          /> */
+
+  /* </div> */
+
+// function MyVerticallyCenteredModal(props) {
+//   console.log("Selected Project : ", props.data.images);
+//   return (
+//     <Modal
+//       {...props}
+//       size="md"
+//       aria-labelledby="contained-modal-title-vcenter"
+//       centered
+//       fullscreen="true"
+//       contentClassName="modalContainer"
+//     >
+//       <Modal.Header style={{ justifyContent: "center" }}>
+//         <Modal.Title id="contained-modal-title-vcenter">
+//           {props.data.name}
+//         </Modal.Title>
+//       </Modal.Header>
+//       <Modal.Body>
+//         <ImageCarousel data={props.data} />
+//       </Modal.Body>
+//     </Modal>
+//   );
+// }

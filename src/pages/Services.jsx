@@ -19,57 +19,63 @@ import {
   DiMongodb,
   DiSwift,
 } from "react-icons/di";
+import { SiFlutter } from "react-icons/si";
+
+import PageTitle from "../components/PageTitle";
 
 function ServicesPage() {
   return (
-    <Wrapper className="section">
-      <h2 className="common-heading">Our Services</h2>
-      <div className="container grid grid-three-column">
-        {services.map((curElem) => {
-          const { id, name, image, description } = curElem;
-          return (
-            <div key={id} className="card">
-              <figure>
-                <img src={image} alt={name} />
-              </figure>
-              <div className="card-data">
-                <div>
-                  <h3>{name}</h3>
-                </div>
-                <div>
-                  <p>{description}</p>
-                </div>
-                {/* <div style={{backgroundColor: "red", marginTop: "auto"}}>
+    <div>
+      <PageTitle title="Our Services" />
+      <Wrapper className="section">
+        {/* <h2 className="common-heading">Our Services</h2> */}
+        <div className="container grid grid-three-column">
+          {services.map((curElem) => {
+            const { id, name, image, description } = curElem;
+            return (
+              <div key={id} className="card">
+                <figure>
+                  <img src={image} alt={name} />
+                </figure>
+                <div className="card-data">
+                  <div>
+                    <h3>{name}</h3>
+                  </div>
+                  <div>
+                    <p>{description}</p>
+                  </div>
+                  {/* <div style={{backgroundColor: "red", marginTop: "auto"}}>
                 <NavLink to="/service">
                   <Button className="btn">Read More</Button>
                 </NavLink>
                 </div> */}
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-      <hr style={{ margin: "5rem" }} />
+        <hr style={{ margin: "5rem" }} />
 
-      <h2 className="common-heading">Technologies We Use</h2>
-      <div className="container grid grid-six-column">
-        {technologies.map((tech) => {
-          const { id, techName } = tech;
-          return (
-            <div key={id} className="techContainer">
-              <tech.iconName className="tech" />
-              <h3>{techName}</h3>
-            </div>
-          );
-        })}
-      </div>
-    </Wrapper>
+        <h2 className="common-heading">Technologies We Use</h2>
+        <div className="container grid grid-six-column">
+          {technologies.map((tech) => {
+            const { id, techName } = tech;
+            return (
+              <div key={id} className="techContainer">
+                <tech.iconName className="tech" />
+                <h3>{techName}</h3>
+              </div>
+            );
+          })}
+        </div>
+      </Wrapper>
+    </div>
   );
 }
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  padding: 5rem 0;
   background-color: ${({ theme }) => theme.colors.bg};
 
   .container {
@@ -153,7 +159,6 @@ const Wrapper = styled.section`
       background-color: ${({ theme }) => theme.colors.bg_white};
       box-shadow: ${({ theme }) => theme.colors.shadow};
       border-radius: 50%;
-      
     }
   }
   .grid-six-column {
@@ -170,6 +175,11 @@ const Wrapper = styled.section`
     .grid-two-column,
     .grid-three-column {
       grid-template-columns: 1fr;
+    }
+    .grid-six-column {
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      justify-content: center;
     }
   }
 `;
@@ -224,6 +234,11 @@ const technologies = [
     id: 4,
     iconName: DiReact,
     techName: "React",
+  },
+  {
+    id: 18,
+    iconName: SiFlutter,
+    techName: "Flutter",
   },
   {
     id: 5,
