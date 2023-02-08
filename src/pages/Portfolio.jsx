@@ -60,19 +60,6 @@ const Portfolio = () => {
                   <img src={images[1].src} alt={name} className="photo" />
                   {images[2] ? <img src={images[0].src} alt={name} className="photo" />: null}
                 </figure>
-                {/* <div class="images">
-                  <div class="photo">
-                    <img src={images[0].src} alt="photo" />
-                  </div>
-
-                  <div class="photo">
-                    <img src={images[1].src} alt="photo" />
-                  </div>
-                  {images[2] ? 
-                  <div class="photo">
-                    <img src={images[2].src} alt="photo" />
-                  </div> : null }
-                </div> */}
                 <div className="card-data">
                   <h3>{name}</h3>
                 </div>
@@ -494,3 +481,17 @@ export default Portfolio;
 //     </Modal>
 //   );
 // }
+
+/* <div class="images">
+    <div class="photo">
+      <img src={images[0].src} alt="photo" />
+    </div>
+
+    <div class="photo">
+      <img src={images[1].src} alt="photo" />
+    </div>
+    {images[2] ? 
+    <div class="photo">
+      <img src={images[2].src} alt="photo" />
+    </div> : null }
+  </div> */

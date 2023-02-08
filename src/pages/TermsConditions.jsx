@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  padding: 3rem 3rem;
+  padding: 5rem 10rem;
   background-color: ${({ theme }) => theme.colors.bg};
 
   h1 {
@@ -81,15 +81,7 @@ function TermsConditions() {
               <strong>Terms and Conditions</strong> (also referred as
               &quot;Terms&quot;) mean these Terms and Conditions that form the
               entire agreement between You and the Company regarding the use of
-              the Service. This Terms and Conditions agreement has been created
-              with the help of the{" "}
-              <a
-                href="https://www.freeprivacypolicy.com/free-terms-and-conditions-generator/"
-                target="_blank"
-              >
-                Free Terms and Conditions Generator
-              </a>
-              .
+              the Service. 
             </p>
           </li>
           <li>
@@ -259,7 +251,7 @@ function TermsConditions() {
         If You have any concern or dispute about the Service, You agree to first
         try to resolve the dispute informally by contacting the Company.
       </p>
-      <h1>For European Union (EU) Users</h1>
+      {/* <h1>For European Union (EU) Users</h1>
       <p>
         If You are a European Union consumer, you will benefit from any
         mandatory provisions of the law of the country in which you are resident
@@ -272,7 +264,7 @@ function TermsConditions() {
         designated by the United States government as a &quot;terrorist
         supporting&quot; country, and (ii) You are not listed on any United
         States government list of prohibited or restricted parties.
-      </p>
+      </p> */}
       <div className="leftAlign">
         <h1>Severability and Waiver</h1>
         <h2>Severability</h2>

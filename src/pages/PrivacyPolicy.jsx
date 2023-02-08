@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  padding: 3rem 3rem;
+  padding: 5rem 10rem;
   background-color: ${({ theme }) => theme.colors.bg};
 
   h1 {
