@@ -54,14 +54,14 @@ function App() {
         <SocialMediaBar />
         <Routes>
           <Route path="/" exact element={<HomePage />} />
-          <Route path="/about" exact element={<AboutPage />} />
-          <Route path="/contact" exact element={<ContactPage />} />
-          <Route path="/service" exact element={<ServicesPage />} />
-          <Route path="/portfolio" exact element={<Portfolio />} />
-          <Route path="/privacyPolicy" exact element={<PrivacyPolicy />} />
-          <Route path="/t&c" exact element={<TermsConditions />} />
-          <Route path="/ImageCarousel" exact element={<ImageCarousel />} />
-          <Route path="*" exact element={<Error />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/service" element={<ServicesPage />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="/t&c" element={<TermsConditions />} />
+          <Route path="/ImageCarousel" element={<ImageCarousel />} />
+          <Route path="*" element={<Error />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <GoToTop />
