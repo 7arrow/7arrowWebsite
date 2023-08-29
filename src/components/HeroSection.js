@@ -9,7 +9,7 @@ const HeroSection = () => {
 
   return (
     <div>
-      <PageTitle title="Who We Are" />
+      {/* <PageTitle title="Who We Are" /> */}
     <Wrapper>
       <div className="container grid grid-two-column">
         <div className="section-hero-data">
@@ -63,7 +63,7 @@ const HeroSection = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 5rem 0;
+  padding: 5rem 5rem;
 
   .section-hero-data {
     display: flex;

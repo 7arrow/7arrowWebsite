@@ -74,7 +74,7 @@ function ServicesPage() {
 }
 
 const Wrapper = styled.section`
-  padding: 5rem 0;
+  padding: 5rem 5rem;
   background-color: ${({ theme }) => theme.colors.bg};
 
   .container {

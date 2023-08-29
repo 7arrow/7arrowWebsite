@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 import headerImg from "../images/Vector-Blue-Background.png";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const PageHeaderTitle = styled.header`
+  height: 100px;
   h1 {
     font-size: 5rem;
     font-weight: 600;
-    color:${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   .text-left {
@@ -15,26 +16,25 @@ const PageHeaderTitle = styled.header`
   }
 `;
 
-function PageTitle({title}) {
+function PageTitle({ title }) {
   return (
     <PageHeaderTitle>
-    <div
+      <div
         style={{
           backgroundImage: `url(${headerImg})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
+          paddingTop:10,
+          paddingBottom:10
         }}
       >
-        <div style={{ minHeight: "150px" }}>
-          <div className="text-left justify-content-center align-self-center">
-            <h1 className="pt-5 pb-3">{title}</h1>
-            {/* <h5>subTitle</h5> */}
-          </div>
-        </div>
+        {/* <h1 className="pt-5 pb-3">{title}</h1> */}
+        <h1 className="text-center align-middle">{title}</h1>
+        {/* <h5>subTitle</h5> */}
       </div>
-      </PageHeaderTitle>
-  )
+    </PageHeaderTitle>
+  );
 }
 
 export default PageTitle;

@@ -26,7 +26,7 @@ function App() {
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
-      text: "rgb(24 24 29)",
+      text: "#000000",
       white: "#fff",
       black: "#212529",
       helper: "#8490ff",
@@ -51,16 +51,16 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Header />
-        <SocialMediaBar />
+        {/* <SocialMediaBar /> */}
         <Routes>
           <Route path="/" exact element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/service" element={<ServicesPage />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/t&c" element={<TermsConditions />} />
-          <Route path="/ImageCarousel" element={<ImageCarousel />} />
+          {/* <Route path="/ImageCarousel" element={<ImageCarousel />} /> */}
           <Route path="*" element={<Error />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

@@ -39,7 +39,7 @@ function ContactPage() {
         Email: ${formData.email}
         Message: ${formData.message}
       `;
-      window.open(`mailto:7arrow.in@gmail.com?subject=${subject}&body=${body}`);
+      window.open(`mailto:ayogesh1988@gmail.com?subject=${subject}&body=${body}`);
       setFormData({
         name: "",
         email: "",
@@ -60,9 +60,9 @@ function ContactPage() {
               width="100%"
               height="450"
               style={{ border: 0 }}
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
 
@@ -158,7 +158,7 @@ const Wrapper = styled.section`
 
 export default ContactPage;
 
-{/* <h2 className="common-heading">Feel Free to Contact us</h2> */}
+// {/* <h2 className="common-heading">Feel Free to Contact us</h2> */}
             {/* <div className="contact-form">
               <form
                 action="https://formspree.io/f/mdojwyzb"

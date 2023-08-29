@@ -58,7 +58,9 @@ const Portfolio = () => {
                 <figure className="images">
                   <img src={images[0].src} alt={name} className="photo" />
                   <img src={images[1].src} alt={name} className="photo" />
-                  {images[2] ? <img src={images[0].src} alt={name} className="photo" />: null}
+                  {images[2] ? (
+                    <img src={images[0].src} alt={name} className="photo" />
+                  ) : null}
                 </figure>
                 <div className="card-data">
                   <h3>{name}</h3>
@@ -91,7 +93,7 @@ const Portfolio = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 5rem 0;
+  padding: 5rem 5rem;
   background-color: ${({ theme }) => theme.colors.bg};
 
   .container {
@@ -101,7 +103,7 @@ const Wrapper = styled.section`
   .card {
     border: 0.1rem solid rgb(170 170 170 / 40%);
     .card-data {
-      padding: 0 2rem;
+      padding: 0 1rem;
       justify-content: center;
       align-items: center;
     }
@@ -147,22 +149,22 @@ const Wrapper = styled.section`
   }
 
   .images {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 10px;
-            padding: 10px;
-        }
-  
-        .photo {
-            max-width: 30%;
-            padding: 0 10px;
-            height: 150px;
-        }
-  
-        .photo img {
-            width: 100%;
-            height: 100%;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+    padding: 10px;
+  }
+
+  .photo {
+    max-width: 30%;
+    padding: 0 10px;
+    height: 150px;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+  }
 
   /* @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .modal {
@@ -441,8 +443,8 @@ const projects = [
 
 export default Portfolio;
 
-  /* <ImageCarousel toggle={showModal} action={openModal} /> */
-  /* <div
+/* <ImageCarousel toggle={showModal} action={openModal} /> */
+/* <div
           style={{
             display: "flex",
             justifyContent: "center",
@@ -450,14 +452,14 @@ export default Portfolio;
           }}
         > */
 
-  /* <MyVerticallyCenteredModal
+/* <MyVerticallyCenteredModal
             show={showModal}
             onHide={() => setShowModal(false)}
             data={selectedProject}
             className="modal"
           /> */
 
-  /* </div> */
+/* </div> */
 
 // function MyVerticallyCenteredModal(props) {
 //   console.log("Selected Project : ", props.data.images);

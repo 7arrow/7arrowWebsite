@@ -6,7 +6,7 @@ import { Button } from "../styles/Button";
 const Error = () => {
   return (
     <Wrapper>
-      <img src="./images/error.svg" alt="error" />
+      <img src="./images/error.svg" alt="error" style={{height:200}} />
       <NavLink to="/">
       <Button className="btn">Go Back</Button>
       </NavLink>
@@ -22,8 +22,10 @@ const Wrapper = styled.section`
     align-items: center;
 
     .btn {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         margin-top: 3rem;
+        /* height:10px;
+        width:50px; */
     }
 `;
 

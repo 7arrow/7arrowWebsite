@@ -81,7 +81,7 @@ const Footer = () => {
           <div className="container grid grid-two-column">
             <p>@{new Date().getFullYear()} 7Arrow.in All Rights Reserved</p>
             <div className="privacyDiv">
-              <NavLink to="/privacyPolicy">
+              <NavLink to="/privacy-policy">
                 <p onClick={goToBtn}>PRIVACY POLICY</p>
               </NavLink>
               <NavLink to="/t&c">
