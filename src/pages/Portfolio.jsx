@@ -189,6 +189,68 @@ const Wrapper = styled.section`
 const projects = [
   {
     id: 1,
+    name: "Bettermind App",
+    images: [
+      {
+        id: 1,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Login.jpg",
+      },
+      {
+        id: 2,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Home.jpg",
+      },
+      {
+        id: 3,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Courses.jpg",
+      },
+      {
+        id: 4,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Course_Details.jpg",
+      },
+      {
+        id: 5,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Course_VideoScreen.jpg",
+      },
+      {
+        id: 6,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Ebook.jpg",
+      },
+      {
+        id: 7,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Ebook_Details.jpg",
+      },
+      {
+        id: 8,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Calender.jpg",
+      },
+      {
+        id: 9,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Counselors.jpg",
+      },
+      {
+        id: 10,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Counselor_Profile.jpg",
+      },
+      {
+        id: 11,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Profile.jpg",
+      },
+      {
+        id: 12,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_MyJournal.jpg",
+      },
+      {
+        id: 13,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Assesment.jpg",
+      },
+      {
+        id: 14,
+        src: "./images/PortfolioImages/Bettermind/BetterMind_Assessment_Questions.jpg",
+      },
+    ],
+  },
+  {
+    id: 2,
     name: "Mumtreprenuer App",
     images: [
       {
@@ -218,7 +280,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Dairy Service App",
     images: [
       {
@@ -248,7 +310,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "Social App",
     images: [
       {
@@ -302,7 +364,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "Casetrack",
     images: [
       {
@@ -332,7 +394,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "Hotel App",
     images: [
       {
@@ -354,7 +416,7 @@ const projects = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "HairStyleWale App",
     images: [
       {
@@ -372,7 +434,7 @@ const projects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: "GPS Login",
     images: [
       {
@@ -386,7 +448,7 @@ const projects = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     name: "Bluetooth Printer",
     images: [
       {
@@ -404,7 +466,7 @@ const projects = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     name: "Fingerprint Demo App",
     images: [
       {
@@ -422,7 +484,7 @@ const projects = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     name: "Info Storage App",
     images: [
       {
