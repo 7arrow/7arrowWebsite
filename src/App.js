@@ -11,13 +11,15 @@ import ContactPage from "./pages/Contact";
 import ServicesPage from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import SSPrivacyPolicy from "./pages/SSPrivacyPolicy";
+import AarogyavedaPrivacyPolicy from "./pages/AarogyavedaPrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-import ImageCarousel from "./components/ImageCarousel";
+// import ImageCarousel from "./components/ImageCarousel";
 import Error from "./pages/Error";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GoToTop from "./components/GoToTop";
-import SocialMediaBar from "./components/SocialMediaBar";
+// import SocialMediaBar from "./components/SocialMediaBar";
 
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
@@ -59,6 +61,8 @@ function App() {
           <Route path="/service" element={<ServicesPage />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/ss-privacy-policy" element={<SSPrivacyPolicy />} />
+          <Route path="/aarogyaveda-privacy-policy" element={<AarogyavedaPrivacyPolicy />} />
           <Route path="/t&c" element={<TermsConditions />} />
           {/* <Route path="/ImageCarousel" element={<ImageCarousel />} /> */}
           <Route path="*" element={<Error />} />
