@@ -69,9 +69,12 @@ const Footer = () => {
           </div>
           {/* 4th column */}
           <div className="footer-contact">
-            <h3>Call Us</h3>
-            <h3>9011999711</h3>
+            {/* <h3>Call Us</h3> */}
+            {/* <h3>9011999711</h3> */}
             {/* <h3>8668344896</h3> */}
+            {/* <h3>Developer Support</h3> */}
+            <h3>Message Us</h3>
+            <h3>7arrow.in@gmail.com</h3>
           </div>
         </div>
 

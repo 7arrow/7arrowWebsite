@@ -311,6 +311,90 @@ const projects = [
   },
   {
     id: 4,
+    name: "Master App",
+    images: [
+      {
+        id: 1,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_Login.jpg",
+      },
+      {
+        id: 2,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_Signup.jpg",
+      },
+      {
+        id: 3,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_Drawer.jpg",
+      },
+      {
+        id: 4,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_Fault_Master.jpg",
+      },
+      {
+        id: 5,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_AddFault_New.jpg",
+      },
+      {
+        id: 6,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_Visit_Master.jpg",
+      },
+      {
+        id: 7,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_AddVisit_New.jpg",
+      },
+      {
+        id: 8,
+        src: "./images/PortfolioImages/MasterApp/MasterApp_Service_Report_New2.jpg",
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "Arogyaveda App",
+    images: [
+      {
+        id: 1,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Login.jpg",
+      },
+      {
+        id: 2,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Drawer.jpg",
+      },
+      {
+        id: 3,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Home.jpg",
+      },
+      {
+        id: 4,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Register_User.jpg",
+      },
+      {
+        id: 5,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Reports.jpg",
+      },
+      {
+        id: 6,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Report_Details.jpg",
+      },
+      {
+        id: 7,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Update_Subscription.jpg",
+      },
+      {
+        id: 8,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_Update_UserPassword.jpg",
+      },
+      {
+        id: 9,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_User.jpg",
+      },
+      {
+        id: 10,
+        src: "./images/PortfolioImages/Arogyaveda/Arogyaveda_UserDetails.jpg",
+      },
+    ],
+  },
+  {
+    id: 6,
     name: "Social App",
     images: [
       {
@@ -364,7 +448,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 7,
     name: "Casetrack",
     images: [
       {
@@ -394,7 +478,7 @@ const projects = [
     ],
   },
   {
-    id: 6,
+    id: 8,
     name: "Hotel App",
     images: [
       {
@@ -416,7 +500,7 @@ const projects = [
     ],
   },
   {
-    id: 7,
+    id: 9,
     name: "HairStyleWale App",
     images: [
       {
@@ -434,7 +518,7 @@ const projects = [
     ],
   },
   {
-    id: 8,
+    id: 10,
     name: "GPS Login",
     images: [
       {
@@ -448,7 +532,7 @@ const projects = [
     ],
   },
   {
-    id: 9,
+    id: 11,
     name: "Bluetooth Printer",
     images: [
       {
@@ -466,7 +550,7 @@ const projects = [
     ],
   },
   {
-    id: 10,
+    id: 12,
     name: "Fingerprint Demo App",
     images: [
       {
@@ -484,7 +568,7 @@ const projects = [
     ],
   },
   {
-    id: 11,
+    id: 13,
     name: "Info Storage App",
     images: [
       {
