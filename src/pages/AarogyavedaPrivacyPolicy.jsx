@@ -241,7 +241,7 @@ function AarogyavedaPrivacyPolicy() {
       <p>
         If you have any questions regarding privacy while using the Application,
         or have questions about the practices, please contact the Service
-        Provider via email at 7arrow.in@gmail.com.
+        Provider via email at <span style={{ fontWeight: "bold"}}><a target="_blank" href="mailto:7arrow.in@gmail.com">7arrow.in@gmail.com</a></span>.
       </p>
       
       {/* <p>

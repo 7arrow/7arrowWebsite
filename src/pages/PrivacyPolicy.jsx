@@ -37,7 +37,7 @@ function PrivacyPolicy() {
   return (
     <Wrapper className="section">
       <h1>Privacy Policy</h1>
-      <p>Last updated: August 25, 2023</p>
+      {/* <p>Last updated: August 25, 2023</p> */}
       <p style={{color:'#000'}}>
         This Privacy Policy describes Our policies and procedures on the
         collection, use and disclosure of Your information when You use the
@@ -438,15 +438,8 @@ function PrivacyPolicy() {
       </p>
       <h1>Contact Us</h1>
       <p style={{paddingLeft:10}}>
-        If you have any questions about this Privacy Policy, You can contact us:
+        If you have any questions about this Privacy Policy, You can contact us at: <span style={{color: "blue", fontWeight: "bold"}}><a target="_blank" href="mailto:7arrow.in@gmail.com">7arrow.in@gmail.com</a></span>
       </p>
-      <ul>
-        <p>
-        <li style={{paddingLeft:10}}>
-          By email:{" "}<span style={{color: "blue", fontWeight: "bold"}}>7Arrow.in@gmail.com</span>
-        </li>
-        </p>
-      </ul>
     </Wrapper>
   );
 }
